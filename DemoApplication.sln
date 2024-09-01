@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configurations", "configurations", "{CB390353-2998-4E62-B937-3E13FCA39249}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "databases", "databases", "{3018A710-BDB8-4412-90EC-E0826B6BE48B}"
+	ProjectSection(SolutionItems) = preProject
+		databases\TaskSchedulerJob.bat = databases\TaskSchedulerJob.bat
+		databases\TaskSchedulerJobScript.sql = databases\TaskSchedulerJobScript.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "desktop", "desktop", "{3FEB8D56-9E94-48BD-A84C-F6CA294BF5DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libraries", "libraries", "{98CD6459-9A38-4B66-BBC1-96D80EFE257C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{9417AD70-A8E0-419C-9E5E-570F61C2FB97}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "task_scheduler", "task_scheduler", "{E28A0E16-4174-4251-B5C6-8DF8E7C4832F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{22701543-0EF8-4BB3-BFC8-05FFCD353694}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AdminDB", "databases\AdminDB\AdminDB.sqlproj", "{5D162959-3629-45E8-865E-394B1663E2D4}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CoreDB", "databases\CoreDB\CoreDB.sqlproj", "{9E6BA115-E037-4E9B-B193-AE7474488C2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5D162959-3629-45E8-865E-394B1663E2D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D162959-3629-45E8-865E-394B1663E2D4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{5D162959-3629-45E8-865E-394B1663E2D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D162959-3629-45E8-865E-394B1663E2D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D162959-3629-45E8-865E-394B1663E2D4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{9E6BA115-E037-4E9B-B193-AE7474488C2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E6BA115-E037-4E9B-B193-AE7474488C2D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{9E6BA115-E037-4E9B-B193-AE7474488C2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E6BA115-E037-4E9B-B193-AE7474488C2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E6BA115-E037-4E9B-B193-AE7474488C2D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5D162959-3629-45E8-865E-394B1663E2D4} = {3018A710-BDB8-4412-90EC-E0826B6BE48B}
+		{9E6BA115-E037-4E9B-B193-AE7474488C2D} = {3018A710-BDB8-4412-90EC-E0826B6BE48B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {74A3E3F1-08A2-4527-BBFA-E1FF3289DA07}
+	EndGlobalSection
+EndGlobal

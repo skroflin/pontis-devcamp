@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [coredb_admin]
+    WITH PASSWORD = N'TzRrnCJvokfbtvCc|bq {o?.msFT7_&#$!~<rfpF{jquLzgx', SID = 0x77017B0F15A68049B798498680D3D232, DEFAULT_DATABASE = [CoreDB], DEFAULT_LANGUAGE = [us_english], CHECK_EXPIRATION = ON;
+
