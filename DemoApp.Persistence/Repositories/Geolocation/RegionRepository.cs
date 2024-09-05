@@ -1,9 +1,10 @@
-﻿using DemoApp.Core.Models.Geolocation;
+﻿using DemoApp.Domain.Interfaces.Repositories.Geolocation;
+using DemoApp.Domain.Models.Geolocation;
 using DemoApp.Domain.Paging.Models;
 
 namespace DemoApp.Persistence.Repositories.Geolocation
 {
-    public interface RegionRepository
+    public interface RegionRepository : IRegionRepository
     {
         Task<List<Region>> GetRegionsPaged(TableMetadata? tableMetadata = null);
         Task<List<Region>> GetRegions();

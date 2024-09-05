@@ -1,9 +1,10 @@
-﻿using DemoApp.Core.Models.Geolocation;
+﻿using DemoApp.Domain.Interfaces.Repositories.Geolocation;
+using DemoApp.Domain.Models.Geolocation;
 using DemoApp.Domain.Paging.Models;
 
 namespace DemoApp.Persistence.Repositories.Geolocation
 {
-    public interface DistrictRepository
+    public interface DistrictRepository : IDistrictRepository
     {
         Task<List<District>> GetDistrictsPaged(TableMetadata? tableMetadata = null);
         Task<List<District>> GetDistricts();

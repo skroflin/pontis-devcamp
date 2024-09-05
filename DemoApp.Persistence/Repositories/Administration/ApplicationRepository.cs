@@ -1,9 +1,10 @@
-﻿using DemoApp.Core.Models.Administration;
+﻿using DemoApp.Domain.Interfaces.Repositories.Administration;
+using DemoApp.Domain.Models.Administration;
 using DemoApp.Domain.Paging.Models;
 
 namespace DemoApp.Persistence.Repositories.Administration
 {
-    public interface ApplicationRepository
+    public interface ApplicationRepository : IApplicationRepository
     {
         Task<List<Application>> GetApplicationsPaged(TableMetadata? tableMetadata = null);
         Task<List<Application>> GetApplications();

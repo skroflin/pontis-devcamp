@@ -1,9 +1,10 @@
-﻿using DemoApp.Core.CoreDbEntities;
+﻿using DemoApp.Domain.CoreDbEntities;
+using DemoApp.Domain.Interfaces.Repositories.Geolocation;
 using DemoApp.Domain.Paging.Models;
 
 namespace DemoApp.Persistence.Repositories.Geolocation
 {
-    public interface CountryRepository
+    public interface CountryRepository : ICountryRepository
     {
         Task<List<Country>> GetCountriesPaged(TableMetadata tableMetadata);
         Task<List<Country>> GetCountries();

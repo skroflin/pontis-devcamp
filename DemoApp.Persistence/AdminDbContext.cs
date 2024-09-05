@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using DemoApp.Core.Models.Administration;
+using DemoApp.Domain.Models.Administration;
 
 namespace DemoApp.Persistence
 {

@@ -1,6 +1,6 @@
-﻿using DemoApp.Core.CoreDbEntities;
-using DemoApp.Core.Models.Common;
-using DemoApp.Core.Models.Geolocation;
+﻿using DemoApp.Domain.CoreDbEntities;
+using DemoApp.Domain.Models.Common;
+using DemoApp.Domain.Models.Geolocation;
 using Microsoft.EntityFrameworkCore;
 
 namespace DemoApp.Persistence

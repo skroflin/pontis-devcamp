@@ -1,9 +1,10 @@
-﻿using DemoApp.Core.Models.Administration;
+﻿using DemoApp.Domain.Interfaces.Repositories.Administration;
+using DemoApp.Domain.Models.Administration;
 using DemoApp.Domain.Paging.Models;
 
 namespace DemoApp.Persistence.Repositories.Administration
 {
-    public interface AuthorizationRepository
+    public interface AuthorizationRepository : IAuthorizationRepository
     {
         Task<List<Authorization>> GetAuthorizationsPaged(TableMetadata? metadata = null);
         Task<List<Authorization>> GetAuthorizations();

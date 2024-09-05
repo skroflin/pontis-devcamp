@@ -1,10 +1,9 @@
-﻿using DemoApp.Domain.Interfaces.Repositories.Common;
-using DemoApp.Domain.Models.Common;
+﻿using DemoApp.Domain.Models.Common;
 using DemoApp.Domain.Paging.Models;
 
-namespace DemoApp.Persistence.Repositories.Common
+namespace DemoApp.Domain.Interfaces.Repositories.Common
 {
-    public interface GenderRepository : IGenderRepository
+    public interface IGenderRepository
     {
         Task<List<Gender>> GetGendersPaged(TableMetadata? tableMetadata = null);
         Task<List<Gender>> GetGenders();

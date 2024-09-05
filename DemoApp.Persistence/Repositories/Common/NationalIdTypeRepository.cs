@@ -1,9 +1,10 @@
-﻿using DemoApp.Core.Models.Common;
+﻿using DemoApp.Domain.Interfaces.Repositories.Common;
+using DemoApp.Domain.Models.Common;
 using DemoApp.Domain.Paging.Models;
 
 namespace DemoApp.Persistence.Repositories.Common
 {
-    public interface NationalIdTypeRepository
+    public interface NationalIdTypeRepository : INationalIdTypeRepository
     {
         Task<List<NationalIdType>> GetNationalIdTypesPaged(TableMetadata? tableMetadata = null);
         Task<List<NationalIdType>> GetNationalIdTypes();

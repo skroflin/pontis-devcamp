@@ -1,6 +1,4 @@
-﻿using DemoApp.Core.Interfaces.Repositories.Administration;
-using DemoApp.Core.Interfaces.Repositories.Common;
-using DemoApp.Core.Interfaces.Repositories.Geolocation;
+﻿using DemoApp.Domain.Interfaces.Repositories.Common;
 using DemoApp.Domain.Interfaces.Repositories.Administration;
 using DemoApp.Domain.Interfaces.Repositories.Geolocation;
 using DemoApp.Persistence.Repositories.Administration;

@@ -1,9 +1,10 @@
-﻿using DemoApp.Core.Models.Geolocation;
+﻿using DemoApp.Domain.Interfaces.Repositories.Geolocation;
+using DemoApp.Domain.Models.Geolocation;
 using DemoApp.Domain.Paging.Models;
 
 namespace DemoApp.Persistence.Repositories.Geolocation
 {
-    public interface PlaceRepository
+    public interface PlaceRepository : IPlaceRepository
     {
         Task<List<Place>> GetPlacesPaged (TableMetadata? tableMetadata = null);
         Task<List<Place>> GetPlaces();

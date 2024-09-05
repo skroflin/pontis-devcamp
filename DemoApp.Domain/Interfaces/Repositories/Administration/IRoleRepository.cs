@@ -1,10 +1,9 @@
-﻿using DemoApp.Domain.Interfaces.Repositories.Administration;
-using DemoApp.Domain.Models.Administration;
+﻿using DemoApp.Domain.Models.Administration;
 using DemoApp.Domain.Paging.Models;
 
-namespace DemoApp.Persistence.Repositories.Administration
+namespace DemoApp.Domain.Interfaces.Repositories.Administration
 {
-    public interface RoleRepository : IRoleRepository
+    public interface IRoleRepository
     {
         Task<List<Role>> GetRolesPaged(TableMetadata? tableMetadata = null);
         Task<List<Role>> GetRoles();
