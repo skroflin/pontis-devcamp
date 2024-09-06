@@ -7,7 +7,7 @@ namespace DemoApp.Domain.Interfaces.Repositories.Geolocation
     {
         Task<List<District>> GetDistrictsPaged(TableMetadata? tableMetadata = null);
         Task<List<District>> GetDistricts();
-        Task<int> GetCount();
+        Task<int> GetDistrictCount();
         Task<District> GetDistrict(int id);
         Task insertDistrict (District district);
         Task updateDistrict (District district);

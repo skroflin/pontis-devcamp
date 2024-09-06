@@ -9,8 +9,8 @@ namespace DemoApp.Domain.Interfaces.Repositories.Geolocation
         Task<List<Region>> GetRegions();
         Task<int> GetRegionsCount();
         Task<Region> GetRegion(int id);
-        Task insertRegion (Region region);
-        Task updateRegion (Region region);
-        Task deleteRegion (Region region);
+        Task InsertRegion (Region region);
+        Task UpdateRegion (Region region);
+        Task DeleteRegion (int id);
     }
 }

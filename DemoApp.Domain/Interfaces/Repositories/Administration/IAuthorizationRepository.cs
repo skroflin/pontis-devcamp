@@ -9,8 +9,8 @@ namespace DemoApp.Domain.Interfaces.Repositories.Administration
         Task<List<Authorization>> GetAuthorizations();
         Task<int> GetAuthorizationsCount();
         Task<Authorization> GetAuthorization(int id);
-        Task insertAuthorization(Authorization authorization);
-        Task updateAuthorization(Authorization authorization);
-        Task deleteAuthorization(int id);
+        Task InsertAuthorization(Authorization authorization);
+        Task UpdateAuthorization(Authorization authorization);
+        Task DeleteAuthorization(int id);
     }
 }

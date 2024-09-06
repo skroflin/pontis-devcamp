@@ -13,11 +13,11 @@ namespace DemoApp.Persistence
             : base(options) { }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Gender> Genders { get; set; }
-        public virtual DbSet<NationalIdType> NationalIdType { get; set; }
-        public virtual DbSet<Country> Country { get; set; }
+        public virtual DbSet<NationalIdType> NationalIdTypes { get; set; }
+        public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<District> Districts { get; set; }
         public virtual DbSet<Place> Places { get; set; }
-        public virtual DbSet<Region> Region { get; set; }
+        public virtual DbSet<Region> Regions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

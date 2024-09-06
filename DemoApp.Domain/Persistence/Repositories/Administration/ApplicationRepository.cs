@@ -12,6 +12,7 @@ namespace DemoApp.Persistence.Repositories.Administration
         {
             _context = context;
         }
+
         public async Task<List<Application>> GetApplicationsPaged(TableMetadata? tableMetadata)
         {
             var pagedIndex = tableMetadata?.PagingMetadata.PageIndex == 0 ? 1 : tableMetadata.PagingMetadata.PageIndex;
@@ -23,31 +24,21 @@ namespace DemoApp.Persistence.Repositories.Administration
             return await query.ToListAsync();
         }
 
-        public async Task DeleteApplication(int id)
-        {
-            var country = await _context.Applications.FindAsync(id);
-            if (country != null)
-            {
-                _context.Applications.Remove(country);
-                await _context.SaveChangesAsync();
-            }
-        }
-
-        public async Task<Application> GetApplication(int id)
-        {
-            return await _context.Applications.FindAsync(id);
-        }
-
         public async Task<List<Application>> GetApplications()
         {
             return await _context.Applications.ToListAsync();
         }
+
 
         public async Task<int> GetApplicationsCount()
         {
             return await _context.Applications.CountAsync();
         }
 
+        public async Task<Application> GetApplication(int id)
+        {
+            return await _context.Applications.FindAsync(id);
+        }
 
         public async Task InsertApplication(Application application)
         {
@@ -61,6 +52,16 @@ namespace DemoApp.Persistence.Repositories.Administration
             if (existingCountry != null)
             {
                 _context.Entry(existingCountry).CurrentValues.SetValues(application);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task DeleteApplication(int id)
+        {
+            var country = await _context.Applications.FindAsync(id);
+            if (country != null)
+            {
+                _context.Applications.Remove(country);
                 await _context.SaveChangesAsync();
             }
         }

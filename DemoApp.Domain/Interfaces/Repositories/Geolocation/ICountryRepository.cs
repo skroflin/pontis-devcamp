@@ -9,8 +9,8 @@ namespace DemoApp.Domain.Interfaces.Repositories.Geolocation
         Task<List<Country>> GetCountries();
         Task<int> GetCountryCount();
         Task<Country> GetCountry(int id);
-        Task insertCountry (Country country);
-        Task updateCountry (Country country);
-        Task deleteCountry (int id);
+        Task InsertCountry (Country country);
+        Task UpdateCountry (Country country);
+        Task DeleteCountry (int id);
     }
 }

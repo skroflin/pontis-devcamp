@@ -9,9 +9,9 @@ namespace DemoApp.Domain.Interfaces.Repositories.Geolocation
         Task<List<Place>> GetPlacesPaged(TableMetadata? tableMetadata = null);
         Task<List<Place>> GetPlaces();
         Task<int> GetPlacesCount();
-        Task<Country> GetCountry(int id);
-        Task insertPlace(Place place);
-        Task updatePlace(Place place);
-        Task deletePlace(Place place);
+        Task<Place> GetPlace(int id);
+        Task InsertPlace(Place place);
+        Task UpdatePlace(Place place);
+        Task DeletePlace(int id);
     }
 }
