@@ -24,38 +24,38 @@ namespace DemoApp.Persistence.Repositories.Administration
         }
         public async Task DeleteUser(int id)
         {
-            var country = await _context.Employees.FindAsync(id);
+            var country = await _context.Users.FindAsync(id);
             if (country != null)
             {
-                _context.Employees.Remove(country);
+                _context.Users.Remove(country);
                 await _context.SaveChangesAsync();
             }
         }
 
         public async Task<User> GetUser(int id)
         {
-            return await _context.Employees.FindAsync(id);
+            return await _context.Users.FindAsync(id);
         }
 
         public async Task<List<User>> GetUsers()
         {
-            return await _context.Employees.ToListAsync();
+            return await _context.Users.ToListAsync();
         }
 
         public async Task<int> GetUsersCount()
         {
-            return await _context.Employees.CountAsync();
+            return await _context.Users.CountAsync();
         }
 
         public async Task InsertUser(User user)
         {
-            _context.Employees.Add(user);
+            _context.Users.Add(user);
             await _context.SaveChangesAsync();
         }
 
         public async Task UpdateUser(User user)
         {
-            var existingCountry = await _context.Employees.FindAsync(user.Id);
+            var existingCountry = await _context.Users.FindAsync(user.Id);
             if (existingCountry != null)
             {
                 _context.Entry(existingCountry).CurrentValues.SetValues(user);

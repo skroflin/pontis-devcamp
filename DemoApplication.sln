@@ -29,7 +29,7 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AdminDB", "databases\AdminD
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CoreDB", "databases\CoreDB\CoreDB.sqlproj", "{9E6BA115-E037-4E9B-B193-AE7474488C2D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoApp", "DemoApp\DemoApp.csproj", "{CE65AFDB-CD95-4EEF-9D24-B39CC04A732D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoApp.api", "DemoApp\DemoApp.api.csproj", "{CE65AFDB-CD95-4EEF-9D24-B39CC04A732D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoApp.Persistence", "DemoApp.Persistence\DemoApp.Persistence.csproj", "{3EEC5636-40BC-4A2B-839A-2270C2E0D915}"
 EndProject
@@ -37,7 +37,7 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "DemoApp.spa", "DemoApp.spa\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoApp.Core", "DemoApp.Core\DemoApp.Core.csproj", "{3598A817-83E2-4416-9A65-BF455C2504E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApp.Domain", "DemoApp.Domain\DemoApp.Domain.csproj", "{74564325-83D6-414E-85C2-3E3FF3A6FE67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoApp.Domain", "DemoApp.Domain\DemoApp.Domain.csproj", "{74564325-83D6-414E-85C2-3E3FF3A6FE67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,11 +46,13 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5D162959-3629-45E8-865E-394B1663E2D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D162959-3629-45E8-865E-394B1663E2D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D162959-3629-45E8-865E-394B1663E2D4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{5D162959-3629-45E8-865E-394B1663E2D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D162959-3629-45E8-865E-394B1663E2D4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5D162959-3629-45E8-865E-394B1663E2D4}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{9E6BA115-E037-4E9B-B193-AE7474488C2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E6BA115-E037-4E9B-B193-AE7474488C2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E6BA115-E037-4E9B-B193-AE7474488C2D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{9E6BA115-E037-4E9B-B193-AE7474488C2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E6BA115-E037-4E9B-B193-AE7474488C2D}.Release|Any CPU.Build.0 = Release|Any CPU

@@ -23,7 +23,7 @@ namespace DemoApp.Core.Dtos.Geolocation
                 Id = regionDto.RegionId,
                 Name = regionDto.RegionName
             };
-
+            
             if (isUpdate)
             {
                 region.UserModified = Environment.UserDomainName;
