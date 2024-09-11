@@ -24,7 +24,7 @@ namespace DemoApp.Persistence.Repositories.Common
             return await query.ToListAsync();
         }
 
-        public async Task<List<NationalIdType>> GetNationalIds()
+        public async Task<List<NationalIdType>> GetNationalIdTypes()
         {
             return await _context.NationalIdTypes.ToListAsync();
         }
@@ -39,13 +39,13 @@ namespace DemoApp.Persistence.Repositories.Common
             return await _context.NationalIdTypes.FindAsync(id);
         }
 
-        public async Task insertNationalIdType(NationalIdType nationalIdType)
+        public async Task InsertNationalIdType(NationalIdType nationalIdType)
         {
             _context.NationalIdTypes.Add(nationalIdType);
             await _context.SaveChangesAsync();
         }
 
-        public async Task updateNationalIdType(NationalIdType nationalIdType)
+        public async Task UpdateNationalIdType(NationalIdType nationalIdType)
         {
             var existingCountry = await _context.NationalIdTypes.FindAsync(nationalIdType.Id);
             if (existingCountry != null)
@@ -55,7 +55,7 @@ namespace DemoApp.Persistence.Repositories.Common
             }
         }
 
-        public async Task deleteNationalIdType(int id)
+        public async Task DeleteNationalIdType(int id)
         {
                 var country = await _context.NationalIdTypes.FindAsync(id);
                 if (country != null)

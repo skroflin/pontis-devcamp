@@ -7,7 +7,7 @@ namespace DemoApp.Domain.Interfaces.Repositories.Geolocation
     public interface IPlaceRepository
     {
         Task<List<Place>> GetPlacesPaged(TableMetadata? tableMetadata = null);
-        Task<List<Place>> GetPlaces();
+        Task<List<Place>> GetPlace();
         Task<int> GetPlacesCount();
         Task<Place> GetPlace(int id);
         Task InsertPlace(Place place);

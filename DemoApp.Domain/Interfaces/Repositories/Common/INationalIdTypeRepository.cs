@@ -6,11 +6,11 @@ namespace DemoApp.Domain.Interfaces.Repositories.Common
     public interface INationalIdTypeRepository
     {
         Task<List<NationalIdType>> GetNationalIdTypesPaged(TableMetadata? tableMetadata = null);
-        Task<List<NationalIdType>> GetNationalIds();
+        Task<List<NationalIdType>> GetNationalIdTypes();
         Task<int > GetNationalIdTypesCount();
         Task<NationalIdType> GetNationalIdType(int id);
-        Task insertNationalIdType (NationalIdType nationalIdType);
-        Task updateNationalIdType (NationalIdType nationalIdType);
-        Task deleteNationalIdType (int id);
+        Task InsertNationalIdType (NationalIdType nationalIdType);
+        Task UpdateNationalIdType (NationalIdType nationalIdType);
+        Task DeleteNationalIdType (int id);
     }
 }

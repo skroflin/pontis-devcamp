@@ -13,7 +13,7 @@ namespace DemoApp.Persistence.Repositories.Administration
             _context = context;
         }
 
-        public async Task<List<Authorization>> GetAuthorizationPaged(TableMetadata? tableMetadata)
+        public async Task<List<Authorization>> GetAuthorizationsPaged(TableMetadata? tableMetadata)
         {
             var pagedIndex = tableMetadata?.PagingMetadata.PageIndex == 0 ? 1 : tableMetadata.PagingMetadata.PageIndex;
             var pagingMetadata = tableMetadata.PagingMetadata;

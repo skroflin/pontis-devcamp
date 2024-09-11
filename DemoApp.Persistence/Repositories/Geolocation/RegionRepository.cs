@@ -24,7 +24,7 @@ namespace DemoApp.Persistence.Repositories.Geolocation
             return await query.ToListAsync();
         }
 
-        public async Task<List<Region>> GetRegions()
+        public async Task<List<Region>> GetRegion()
         {
             return await _context.Regions.ToListAsync();
         }

@@ -9,8 +9,8 @@ namespace DemoApp.Domain.Interfaces.Repositories.Geolocation
         Task<List<District>> GetDistricts();
         Task<int> GetDistrictCount();
         Task<District> GetDistrict(int id);
-        Task insertDistrict (District district);
-        Task updateDistrict (District district);
-        Task deleteDistrict (int id);
+        Task InsertDistrict(District district);
+        Task UpdateDistrict(District district);
+        Task DeleteDistrict(int id);
     }
 }

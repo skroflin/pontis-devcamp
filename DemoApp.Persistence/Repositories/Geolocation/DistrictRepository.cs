@@ -39,13 +39,13 @@ namespace DemoApp.Persistence.Repositories.Geolocation
             return await _context.Districts.FindAsync(id);
         }
 
-        public async Task insertDistrict(District district)
+        public async Task InsertDistrict(District district)
         {
             _context.Districts.Add(district);
             await _context.SaveChangesAsync();
         }
 
-        public async Task updateDistrict(District district)
+        public async Task UpdateDistrict(District district)
         {
             var existingCountry = await _context.Districts.FindAsync(district.Id);
             if (existingCountry != null)
@@ -55,7 +55,7 @@ namespace DemoApp.Persistence.Repositories.Geolocation
             }
         }
 
-        public async Task deleteDistrict(int id)
+        public async Task DeleteDistrict(int id)
         {
             var country = await _context.Districts.FindAsync(id);
             if (country != null)
