@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DemoApp.Core\DemoApp.Core.csproj" />
-    <ProjectReference Include="..\libraries\Utilities\DemoApp.Utilities.csproj" />
+    <ProjectReference Include="..\libraries\DemoApp.Utilities\DemoApp.Utilities.csproj" />
   </ItemGroup>
 
 </Project>
