@@ -18,11 +18,16 @@ builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddCore(builder.Configuration);
 
 builder.Services.AddControllers();
+builder.Services.AddCors();
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 builder.Services.AddSwaggerGen(options =>
 {
     #region Security definition
-    options.SwaggerDoc("v1", new OpenApiInfo { Title = "Najjača aplikacija u galaksiji i šire API!", Version = "v1", Description = "Ovo je najjača aplikacija u galaksiji!" });
+    options.SwaggerDoc("v1", new OpenApiInfo { 
+        Title = "Najjača aplikacija u galaksiji API!", 
+        Version = "v1", 
+        Description = "Ovo je najjača aplikacija u galaksiji i šire. Onaj koji ju koristi je najjači u galaksiji! (p.s. Sandi je kriv za ovu tvorevinu:))" 
+    });
     options.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme()
     {
         Type = SecuritySchemeType.ApiKey,
@@ -50,6 +55,13 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    app.UseCors(builder => builder
+      .WithOrigins(new string[] { "http://localhost:4200" })
+      .AllowAnyMethod()
+      .AllowAnyHeader()
+      .AllowCredentials()
+    );
 }
 
 app.UseHttpsRedirection();
