@@ -16,12 +16,12 @@ namespace DemoApp.Persistence
         {
             services.AddDbContext<AdminDbContext>(options =>
             {
-                options.UseSqlServer("Data Source=DESKTOP-J46BGO7\\SQLEXPRESS;Initial Catalog=AdminDB;Integrated Security=True;TrustServerCertificate=True;");
+                options.UseSqlServer(configuration.GetConnectionString("AdminDbConnection"));
             }, ServiceLifetime.Scoped);
 
             services.AddDbContext<CoreDbContext>(options =>
             {
-                options.UseSqlServer("Data Source=DESKTOP-J46BGO7\\SQLEXPRESS;Initial Catalog=CoreDB;Integrated Security=True;TrustServerCertificate=True;");
+                options.UseSqlServer(configuration.GetConnectionString("CoreDbConnection"));
             }, ServiceLifetime.Scoped);
 
             services.AddAdministrationRepositories();

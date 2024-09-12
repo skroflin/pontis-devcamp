@@ -4,7 +4,7 @@ namespace DemoApp.Core.Dtos.Geolocation
 {
     public record CountryDto
     {
-        public int CountryId { get; set; }
+        public int? CountryId { get; set; }
         public string? CountryName { get; set; }
 
         public static CountryDto CreateDto(Country country) 
@@ -20,18 +20,18 @@ namespace DemoApp.Core.Dtos.Geolocation
         {
             var country = new Country
             {
-                Id = countryDto.CountryId,
                 Name = countryDto.CountryName
             };
 
-            if (isUpdate)
+            if (isUpdate && countryDto.CountryId.HasValue)
             {
+                country.Id = countryDto.CountryId.Value;
                 country.UserModified = Environment.UserDomainName;
-                country.DateCreated = DateTime.Now;
+                country.DateModified = DateTime.Now;
             }
             else
             {
-                country.UserModified = Environment.UserDomainName;
+                country.UserCreated = Environment.UserDomainName;
                 country.DateCreated = DateTime.Now;
             }
 

@@ -24,15 +24,6 @@ namespace DemoApp.Core.Dtos.Common
                 Name = nationalIdTypeDto.NationalIdTypeName
             };
 
-            if (isUpdate) 
-            {
-                nationalIdType.Name = Environment.UserDomainName;
-            }
-            else
-            {
-                nationalIdType.Name = Environment.UserDomainName;
-            }
-
             return nationalIdType;
         }
     }

@@ -4,7 +4,7 @@ namespace DemoApp.Core.Dtos.Geolocation
 {
     public record DistrictDto
     {
-        public int DistrictId { get; set; }
+        public int? DistrictId { get; set; }
         public string? DistrictName { get; set; }
 
         public static DistrictDto CreateDto (District district)
@@ -20,18 +20,18 @@ namespace DemoApp.Core.Dtos.Geolocation
         {
             var district = new District
             {
-                Id = districtDto.DistrictId,
                 Name = districtDto.DistrictName
             };
 
-            if (isUpdate)
+            if (isUpdate && districtDto.DistrictId.HasValue)
             {
+                district.Id = districtDto.DistrictId.Value;
                 district.UserModified = Environment.UserDomainName;
-                district.DateCreated = DateTime.Now;
+                district.DateModified = DateTime.Now;
             }
             else 
             {
-                district.UserModified = Environment.UserDomainName;
+                district.UserCreated = Environment.UserDomainName;
                 district.DateCreated = DateTime.Now;
             }
             

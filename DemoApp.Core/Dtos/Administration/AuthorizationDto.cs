@@ -4,7 +4,7 @@ namespace DemoApp.Core.Dtos.Administration
 {
     public record AuthorizationDto
     {
-        public int AuthorizationId { get; set; }
+        public int? AuthorizationId { get; set; }
         public string? AuthorizationName { get; set; }
 
         public static AuthorizationDto CreateDto(Authorization authorization)
@@ -20,18 +20,18 @@ namespace DemoApp.Core.Dtos.Administration
         {
             var authorization = new Authorization
             {
-                Id = authorizationDto.AuthorizationId,
                 Name = authorizationDto.AuthorizationName
             };
 
-            if (isUpdate)
+            if (isUpdate && authorizationDto.AuthorizationId.HasValue)
             {
+                authorization.Id = authorizationDto.AuthorizationId.Value;
                 authorization.UserModified = Environment.UserDomainName;
-                authorization.DateCreated = DateTime.Now;
+                authorization.DateModified = DateTime.Now;
             }
             else
             {
-                authorization.UserModified = Environment.UserDomainName;
+                authorization.UserCreated = Environment.UserDomainName;
                 authorization.DateCreated = DateTime.Now;
             }
 
