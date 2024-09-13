@@ -4,7 +4,7 @@ namespace DemoApp.Core.Dtos.Administration
 {
     public record ApplicationDto
     {
-        public int ApplicationId { get; set; }
+        public int? ApplicationId { get; set; }
         public string? ApplicationName { get; set; }
 
         public static ApplicationDto CreateDto(Application application)
@@ -20,18 +20,18 @@ namespace DemoApp.Core.Dtos.Administration
         {
             var application = new Application
             {
-                Id = applicationDto.ApplicationId,
                 Name = applicationDto.ApplicationName
             };
 
-            if (isUpdate)
+            if (isUpdate && applicationDto.ApplicationId.HasValue)
             {
+                application.Id = applicationDto.ApplicationId.Value;
                 application.UserModified = Environment.UserDomainName;
-                application.DateCreated = DateTime.Now;
+                application.DateModified = DateTime.Now;
             }
             else
             {
-                application.UserModified = Environment.UserDomainName;
+                application.UserCreated = Environment.UserDomainName;
                 application.DateCreated = DateTime.Now;
             }
 

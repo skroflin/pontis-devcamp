@@ -4,7 +4,7 @@ namespace DemoApp.Core.Dtos.Administration
 {
     public record RoleDto
     {
-        public int RoleId { get; set; }
+        public int? RoleId { get; set; }
         public string? RoleName { get; set; }
 
         public static RoleDto CreateDto(Role role)
@@ -20,18 +20,18 @@ namespace DemoApp.Core.Dtos.Administration
         {
             var role = new Role
             {
-                Id = roleDto.RoleId,
                 Name = roleDto.RoleName
             };
 
-            if (isUpdate)
+            if (isUpdate && roleDto.RoleId.HasValue)
             {
+                role.Id = roleDto.RoleId.Value;
                 role.UserModified = Environment.UserDomainName;
-                role.DateCreated = DateTime.Now;
+                role.DateModified = DateTime.Now;
             }
             else
             {
-                role.UserModified = Environment.UserDomainName;
+                role.UserCreated = Environment.UserDomainName;
                 role.DateCreated = DateTime.Now;
             }
             

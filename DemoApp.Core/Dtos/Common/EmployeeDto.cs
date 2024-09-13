@@ -4,7 +4,7 @@ namespace DemoApp.Core.Dtos.Common
 {
     public record EmployeeDto
     {
-        public int EmployeeId { get; set; }
+        public int? EmployeeId { get; set; }
         public string? EmplopyeeName { get; set; }
         public static EmployeeDto CreateDto(Employee employee)
         {
@@ -19,18 +19,18 @@ namespace DemoApp.Core.Dtos.Common
         {
             var employee = new Employee
             {
-                Id = employeeDto.EmployeeId,
                 Username = employeeDto.EmplopyeeName
             };
 
-            if (isUpdate)
+            if (isUpdate && employeeDto.EmployeeId.HasValue)
             {
+                employee.Id = employeeDto.EmployeeId.Value;
                 employee.UserModified = Environment.UserDomainName;
-                employee.DateCreated = DateTime.Now;
+                employee.DateModified = DateTime.Now;
             }
             else
             {
-                employee.UserModified = Environment.UserDomainName;
+                employee.UserCreated = Environment.UserDomainName;
                 employee.DateCreated = DateTime.Now;
             }
 

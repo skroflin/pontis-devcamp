@@ -4,7 +4,7 @@ namespace DemoApp.Core.Dtos.Geolocation
 {
     public record PlaceDto
     {
-        public int PlaceId { get; set; }
+        public int? PlaceId { get; set; }
         public string? PlaceName { get; set; }
 
         public static PlaceDto CreateDto(Place place)
@@ -20,18 +20,18 @@ namespace DemoApp.Core.Dtos.Geolocation
         {
             var place = new Place
             {
-                Id = placeDto.PlaceId,
                 Name = placeDto.PlaceName
             };
 
-            if (isUpdate) 
+            if (isUpdate && placeDto.PlaceId.HasValue)
             {
+                place.Id = placeDto.PlaceId.Value;
                 place.UserModified = Environment.UserDomainName;
-                place.DateCreated = DateTime.Now;
+                place.DateModified = DateTime.Now;
             }
             else
             {
-                place.UserModified = Environment.UserDomainName;
+                place.UserCreated = Environment.UserDomainName;
                 place.DateCreated = DateTime.Now;
             }
 

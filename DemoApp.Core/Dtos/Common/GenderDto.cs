@@ -4,7 +4,7 @@ namespace DemoApp.Core.Dtos.Common
 {
     public record GenderDto
     {
-        public int GenderId { get; private set; }
+        public int? GenderId { get; private set; }
         public string? GenderName { get; private set; }
 
         public static GenderDto CreateDto(Gender gender)
@@ -20,18 +20,18 @@ namespace DemoApp.Core.Dtos.Common
         {
             var gender = new Gender
             {
-                Id = genderDto.GenderId,
                 Name = genderDto.GenderName
             };
 
-            if (isUpdate)
+            if (isUpdate && genderDto.GenderId.HasValue)
             {
+                gender.Id = genderDto.GenderId.Value;
                 gender.UserModified = Environment.UserDomainName;
-                gender.DateCreated = DateTime.Now;
+                gender.DateModified = DateTime.Now;
             }
             else 
             {
-                gender.UserModified = Environment.UserDomainName;
+                gender.UserCreated = Environment.UserDomainName;
                 gender.DateCreated = DateTime.Now;
             }
 

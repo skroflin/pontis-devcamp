@@ -38,7 +38,7 @@ namespace DemoApp.Core
         private static void AddGeolocationServices(this IServiceCollection services) 
         {
             services.AddTransient<ICountryService, CountryService>();
-            services.AddTransient<IDistrictService, IDistrictService>();
+            services.AddTransient<IDistrictService, DistrictService>();
             services.AddTransient<IPlaceService, PlaceService>();
             services.AddTransient<IRegionService, RegionService>();
         }
