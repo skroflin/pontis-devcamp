@@ -1,4 +1,5 @@
-﻿using DemoApp.Core;
+﻿using DemoApp.api.Middleware;
+using DemoApp.Core;
 using DemoApp.Persistence;
 using DemoApp.Utilities.SecurityManagement;
 using Microsoft.OpenApi.Models;
@@ -63,6 +64,8 @@ if (app.Environment.IsDevelopment())
       .AllowCredentials()
     );
 }
+
+app.UseMiddleware<AccessMiddleware>();
 
 app.UseHttpsRedirection();
 app.UseHsts();
