@@ -18,11 +18,7 @@ namespace DemoApp.Core.Services.Administration
         {
             var count = await _authorizationRepository.GetAuthorizationsCount();
             var authorizations = await _authorizationRepository.GetAuthorizationsPaged(tableMetadata);
-            var authorizationDtos = new List<AuthorizationDto>();
-            foreach (var authorization in authorizations) 
-            {
-                authorizationDtos.Add(AuthorizationDto.CreateDto(authorization));
-            }
+            var authorizationDtos = authorizations.Select(AuthorizationDto.CreateDto).ToList();
             var pagingMetadata = new PagingMetadata(count, tableMetadata.PagingMetadata);
 
             return new PagedListDto<AuthorizationDto>() { PagedData = authorizationDtos, PagingMetadata = pagingMetadata };
