@@ -1,0 +1,10 @@
+<li class="nav-item mr-1" *ngFor="let sidebarItem of sidebarItems">
+  <a class="nav-link" [class.active-sidebar-item]="currentSidebarItem === sidebarItem"
+    (click)="showSidebarItemChildren(sidebarItem)"
+    [matTooltip]="(currentSidebarItem === sidebarItem) ? null : sidebarItem.title" matTooltipPosition="right">
+    <!--#TASK 2
+      Badge text (GEO, PER etc) are not aligned in the center. Try centering it. Or if not possible make sidebar width bigger.
+    -->
+    <b>{{sidebarItem.badge}}</b>
+  </a>
+</li>

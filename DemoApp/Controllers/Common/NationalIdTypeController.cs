@@ -9,7 +9,7 @@ namespace DemoApp.api.Controllers.Common
     [Produces("application/json")]
     [ApiController]
     [Route("[controller]")]
-    [Authorize]
+    [Authorize("admin")]
     public class NationalIdTypeController : ControllerBase
     {
         private readonly INationalIdTypeService _nationalIdTypeService;

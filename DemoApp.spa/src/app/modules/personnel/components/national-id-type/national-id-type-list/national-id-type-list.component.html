@@ -1,0 +1,23 @@
+<app-base-table 
+[pagedListDto]="pagedListDto" 
+[tableMetadata]="tableMetadata"
+[tableHeader]="tableHeader" 
+[type]="type" 
+[orderBy]="orderBy"
+[dtoSuffix]="dtoSuffix"
+[showAddBtn]="true" 
+[showDeleteBtn]="true"
+  [showFormDetails]="showFormDetails"
+  (onLoad)="updateTable($event)"
+  (onShowDetails)="showDetails($event, true)" 
+  (onAdd)="add()" 
+  (onDelete)="delete($event)" 
+  (onFilter)="updateTable($event)"
+  (onSort)="updateTable($event)" 
+  (onPaginate)="updateTable($event)">
+</app-base-table>
+
+<div [ngClass]="showFormDetails ? 'show-form' : 'hide-form'">
+	<app-national-id-type-form *ngIf="showFormDetails" [entity]="entity" (onChange)="updateTable(tableMetadata)" (onCloseForm)="showDetails(null, false)">
+	</app-national-id-type-form>
+</div>

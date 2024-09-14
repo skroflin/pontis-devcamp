@@ -9,7 +9,7 @@ namespace DemoApp.Api.Controllers.Administration
     [Produces("application/json")]
     [ApiController]
     [Route("[controller]")]
-    [Authorize]
+    [Authorize("admin")]
     public class ApplicationController : ControllerBase
     {
         private readonly IApplicationService _applicationService;

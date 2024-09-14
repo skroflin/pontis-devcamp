@@ -1,0 +1,31 @@
+<div class="form-wrapper">
+    <div class="form-header">Region</div>
+    <div class="form-content">
+        <form [formGroup]="formGroup" enctype="application/x-www-form-urlencoded">
+        				<mat-form-field>
+					<mat-label>Region name</mat-label>
+					<input matInput type="text" formControlName="regionName" /> 
+				</mat-form-field>
+				<mat-form-field>
+					<mat-label>Country id</mat-label>
+					<input matInput type="number" formControlName="countryId" /> 
+				</mat-form-field>
+
+        </form>
+    </div>
+
+    <div class="form-actions">
+        <button *ngIf="!isEdit && !isAdd" (click)="edit()" class="btn btn-primary">
+            Edit
+        </button>
+        <button *ngIf="isEdit || isAdd" (click)="cancel()" class="btn btn-warning mr-2">
+            Cancel
+        </button>
+        <button *ngIf="isEdit || isAdd" (click)="save()" class="btn btn-secondary">
+            Save
+        </button>
+    </div>
+    <button mat-icon-button class="form-close-btn" (click)="closeForm()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>

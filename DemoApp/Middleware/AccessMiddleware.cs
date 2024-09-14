@@ -19,6 +19,7 @@ namespace DemoApp.api.Middleware
             if (xApiKey != null && _options.Value.ApiKey == xApiKey)
             {
                 context.Items["XApiKey"] = xApiKey;
+                context.Items["UserRole"] = "admin";
             }
 
             await _next(context);

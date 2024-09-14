@@ -1,33 +1,24 @@
-/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
-/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
-  "compileOnSave": false,
+  "angularCompilerOptions": {
+    "enableIvy": true,
+  },
+  "compileOnSave": true,
   "compilerOptions": {
-    "outDir": "./dist/out-tsc",
-    "strict": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "skipLibCheck": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
+    "outDir": "dist",
     "sourceMap": true,
     "declaration": false,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "moduleResolution": "bundler",
-    "importHelpers": true,
+    "paths": {
+      "@shared/*":["./src/app/shared/*"],
+      "@environments/*":["./src/environments/*"],
+      "@lib/*":["./src/app/lib/*"]
+    },
+    "resolveJsonModule": true,
     "target": "ES2022",
-    "module": "ES2022",
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["ES2022", "dom"]
   },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
-  }
 }

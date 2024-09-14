@@ -1,0 +1,26 @@
+.navbar-wrapper {
+  background-color: $colorLightGrayPrimary;
+  display: flex;
+  height: 50px;
+  width: 100%;
+
+  .navbar-content {
+    width: 95%;
+  }
+
+  .navbar-profile {
+    .logout-btn {
+      position: fixed;
+      right: 10px;
+
+      .mat-menu,
+      .mat-icon {
+        outline: none !important;
+      }
+
+      .mat-icon {
+        font-size: 24px;
+      }
+    }
+  }
+}

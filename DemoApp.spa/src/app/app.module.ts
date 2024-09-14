@@ -1,18 +1,60 @@
+/** ANGULAR MODULES */
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { AppRoutingModule } from './app-routing.module';
+/** CUSTOM MODULES */
+import { SidebarModule } from './core/sidebar/sidebar.module';
+import { LibModule } from './lib/lib.module';
+import { NavbarModule } from './core/navbar/navbar.module';
+
+/** COMPONENTS */
 import { AppComponent } from './app.component';
+import { AuthenticationLayoutComponent } from './layouts/authentication/authentication-layout.component';
+import { MainLayoutComponent } from './layouts/main/main-layout.component';
+
+import { SpinnerComponent } from '@shared/components/spinner/spinner.component';
+
+/** GUARDS */
+import { AuthenticationGuard } from '@shared/guards/authentication.guard';
+
+/** ROUTES */
+import { AppRoutingModule } from './app-routing.module';
+
+/** SERVICES */
+import { SpinnerInterceptor } from '@shared/services/spinner-interceptor';
+import { HttpErrorInterceptor } from './core/interceptors/http-error.interceptor.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    /** MAIN */
+    AppComponent,
+    AuthenticationLayoutComponent,
+    MainLayoutComponent,
+
+    /** SHARED */
+    SpinnerComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SidebarModule,
+    LibModule,
+    NavbarModule,
+
+    CommonModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    AuthenticationGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: SpinnerInterceptor,
+      multi: true,
+    },
+    { provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

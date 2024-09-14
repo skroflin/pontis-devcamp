@@ -1,0 +1,14 @@
+<div class="navbar-wrapper">
+  <div class="navbar-content"></div>
+  <div class="navbar-profile">
+    <button class="logout-btn" mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button class="logout-btn" mat-menu-item (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </div>
+</div>

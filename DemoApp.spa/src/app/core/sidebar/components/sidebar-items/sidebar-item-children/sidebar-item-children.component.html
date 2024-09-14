@@ -1,0 +1,9 @@
+<h6>{{sidebarItem?.title}}</h6>
+<hr />
+<div *ngFor="let sidebarItemChild of sidebarItemChildren">
+  <a class="nav-link" routerLinkActive="active-sidebar-item-child" [routerLink]="[sidebarItemChild.path]">
+    <span>
+      {{sidebarItemChild.title}}
+    </span>
+  </a>
+</div>

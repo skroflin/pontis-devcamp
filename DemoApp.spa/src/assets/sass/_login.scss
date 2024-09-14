@@ -1,0 +1,62 @@
+.login-wrapper {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  height: auto;
+
+  padding: 0px;
+  margin: 0px;
+}
+
+.login-right,
+.login-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-right,
+.login-left {
+  padding: 0px;
+  height: 100vh;
+}
+
+.login-right {
+  background-image: url("../images/shared/bground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-left: 3px solid $colorOrangePrimary;
+  opacity: 0.9;
+  width: 70vw;
+}
+
+.login-left {
+  width: 30vw;
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 70px;
+  }
+
+  .login-title {
+    text-align: left;
+    color: $colorGrayPrimary;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .login-subtitle {
+    text-align: left;
+    color: $colorGrayPrimary;
+    font-size: 18;
+  }
+
+  .login-label {
+    color: $colorGrayPrimary;
+    font-size: 13px;
+    font-weight: bold;
+  }
+}

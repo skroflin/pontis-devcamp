@@ -7,6 +7,7 @@ using DemoApp.Domain.Interfaces.Repositories.Administration;
 using DemoApp.Persistence;
 using DemoApp.Persistence.Repositories.Administration;
 using DemoApp.Utilities.SecurityManagement;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.OpenApi.Models;
 using Serilog;
 

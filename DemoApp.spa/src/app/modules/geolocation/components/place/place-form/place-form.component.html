@@ -1,0 +1,46 @@
+<div class="form-wrapper">
+    <div class="form-header">Place</div>
+    <div class="form-content">
+        <form [formGroup]="formGroup" enctype="application/x-www-form-urlencoded">
+        				<mat-form-field>
+					<mat-label>Place national code</mat-label>
+					<input matInput type="text" formControlName="placeNationalCode" /> 
+				</mat-form-field>
+				<mat-form-field>
+					<mat-label>Place name</mat-label>
+					<input matInput type="text" formControlName="placeName" /> 
+				</mat-form-field>
+				<mat-form-field>
+					<mat-select placeholder="District..." formControlName="districtId">
+                        <input matInput type="text" (keyup)="filterDistricts($event.target.value)">
+                        <mat-option *ngFor="let district of districts" [value]="district.districtId">
+                          {{ district.districtName }}
+                        </mat-option>
+                      </mat-select>
+				</mat-form-field>
+				<mat-form-field>
+					<mat-select placeholder="Region..." formControlName="regionId">
+                        <input matInput type="text" (keyup)="filterRegions($event.target.value)">
+                        <mat-option *ngFor="let region of regions" [value]="region.regionId">
+                          {{ region.regionName }}
+                        </mat-option>
+                      </mat-select>
+				</mat-form-field>
+        </form>
+    </div>
+
+    <div class="form-actions">
+        <button *ngIf="!isEdit && !isAdd && canEdit"  (click)="edit()" class="btn btn-primary">
+            Edit
+        </button>
+        <button *ngIf="isEdit || isAdd && canEdit" (click)="cancel()" class="btn btn-warning mr-2">
+            Cancel
+        </button>
+        <button *ngIf="isEdit || isAdd && canSave" (click)="save()" class="btn btn-secondary">
+            Save
+        </button>
+    </div>
+    <button mat-icon-button class="form-close-btn" (click)="closeForm()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>

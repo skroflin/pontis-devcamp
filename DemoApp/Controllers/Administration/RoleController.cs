@@ -9,7 +9,7 @@ namespace DemoApp.api.Controllers.Administration
     [Produces("application/json")]
     [ApiController]
     [Route("[controller]")]
-    [Authorize]
+    [Authorize("admin")]
     public class RoleController : ControllerBase
     {
         private readonly IRoleService _roleService;

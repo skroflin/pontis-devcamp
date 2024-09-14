@@ -9,7 +9,7 @@ namespace DemoApp.api.Controllers.Geolocation
     [Produces("application/json")]
     [ApiController]
     [Route("[controller]")]
-    [Authorize]
+    [Authorize("admin")]
     public class PlaceController : ControllerBase
     {
         private readonly IPlaceService _placeService;

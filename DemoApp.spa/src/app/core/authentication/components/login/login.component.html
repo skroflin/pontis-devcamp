@@ -1,0 +1,35 @@
+<div class="login-wrapper">
+    <div class="login-left">
+        <div class="login-form">
+            <div class="login-title-wrapper">
+                <div class="login-title">Log in</div>
+                <div class="login-subtitle">Enter your login credentials.</div>
+            </div>
+            <form [formGroup]="formGroup">
+                <mat-form-field>
+                    <mat-label>Username</mat-label>
+                    <input class="mat-input-element" type="text" matInput formControlName="username" [errorStateMatcher]="matcher">
+                    <mat-error *ngIf="formGroup.get('username').hasError('required')">
+                        Please enter username
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input class="mat-input-element" type="password" matInput formControlName="password" [errorStateMatcher]="matcher">
+                    <mat-error *ngIf="formGroup.get('password').hasError('required')">
+                        Please enter password
+                    </mat-error>
+                </mat-form-field>
+                <mat-error *ngIf="loginFailureError" class="my-3">
+                    {{this.loginFailureError}}
+                </mat-error>
+                <div class="form-actions my-5">
+                    <button (click)="login()" class="btn btn-primary mr-2">Login</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div class="login-right"></div>
+</div>

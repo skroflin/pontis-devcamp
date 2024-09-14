@@ -1,0 +1,63 @@
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 100% !important;
+}
+
+
+/** BUTTONS */
+.btn-success {
+  background-color: $colorBluePrimary !important;
+}
+
+.btn-warning {
+  background-color: $colorOrangeSecondary !important;
+
+  &:hover {
+    background-color: $colorOrangePrimary !important;
+  }
+}
+
+.btn-secondary {
+  background-color: $colorGreenPrimary !important;
+  color: $colorWhitePrimary !important;
+
+  &:hover {
+    background-color: $colorGreenSecondary !important;
+  }
+}
+
+/** MATERIAL */
+.mat-form-field {
+  display: block !important;
+}
+
+.mat-form-field-infix {
+  width: 420px !important;
+
+  input {
+    padding: 0px 5px !important;
+
+    &:focus {
+      border-bottom: none !important;
+      box-shadow: none !important;
+    }
+  }
+
+  input[type="password"],
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    border-bottom: none !important;
+    box-shadow: none !important;
+  }
+
+  textarea {
+    min-height: 120px;
+    padding: 10px !important;
+    scrollbar-width: 0px !important;
+    resize: none !important;
+  }
+}
