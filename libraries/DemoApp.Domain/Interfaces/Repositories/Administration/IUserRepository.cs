@@ -11,6 +11,7 @@ namespace DemoApp.Domain.Interfaces.Repositories.Administration
         Task InsertUser (User user);
         Task UpdateUser (User user);
         Task DeleteUser (int id);
-
+        Task<User> GetUserByUsernameAndPassword(string username, string password);
+        Task<User> GetUserWithApplicationsAndRoles(int id);
     }
 }

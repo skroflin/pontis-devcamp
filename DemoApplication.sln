@@ -41,6 +41,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoApp.Utilities", "librar
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoApp.Domain", "libraries\DemoApp.Domain\DemoApp.Domain.csproj", "{1DAEAEBB-26EC-4A99-B6FD-C7B658398A54}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoApp.WPF", "desktop\DemoApp.Wpf\DemoApp.WPF.csproj", "{45FB7D12-4729-4135-892E-CA545895F438}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,10 @@ Global
 		{1DAEAEBB-26EC-4A99-B6FD-C7B658398A54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DAEAEBB-26EC-4A99-B6FD-C7B658398A54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DAEAEBB-26EC-4A99-B6FD-C7B658398A54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45FB7D12-4729-4135-892E-CA545895F438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45FB7D12-4729-4135-892E-CA545895F438}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45FB7D12-4729-4135-892E-CA545895F438}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45FB7D12-4729-4135-892E-CA545895F438}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +104,7 @@ Global
 		{3598A817-83E2-4416-9A65-BF455C2504E0} = {22701543-0EF8-4BB3-BFC8-05FFCD353694}
 		{8BBC09B7-0AB2-477D-89FC-D154FB0B3448} = {98CD6459-9A38-4B66-BBC1-96D80EFE257C}
 		{1DAEAEBB-26EC-4A99-B6FD-C7B658398A54} = {98CD6459-9A38-4B66-BBC1-96D80EFE257C}
+		{45FB7D12-4729-4135-892E-CA545895F438} = {3FEB8D56-9E94-48BD-A84C-F6CA294BF5DE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {74A3E3F1-08A2-4527-BBFA-E1FF3289DA07}

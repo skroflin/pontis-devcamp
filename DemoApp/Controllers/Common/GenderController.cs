@@ -1,5 +1,6 @@
 ﻿using DemoApp.Core.Dtos.Common;
 using DemoApp.Core.Services.Common.Interfaces;
+using DemoApp.Core.Utils.Security.Attributes;
 using DemoApp.Domain.Paging.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,6 +9,7 @@ namespace DemoApp.api.Controllers.Common
     [Produces("application/json")]
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class GenderController : ControllerBase
     {
         private readonly IGenderService _genderService;

@@ -10,7 +10,7 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 :r  .\Scripts\Post-Deployment\Countries_Insert.sql
-:r  .\Scripts\Post-Deployment\District_Insert.sql
+:r  .\Scripts\Post-Deployment\Districts_Insert.sql
 :r  .\Scripts\Post-Deployment\Employees_Insert.sql
 :r  .\Scripts\Post-Deployment\Genders_Insert.sql
 :r  .\Scripts\Post-Deployment\NationalIdTypes_Insert.sql

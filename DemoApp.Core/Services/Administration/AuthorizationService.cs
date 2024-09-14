@@ -10,7 +10,7 @@ namespace DemoApp.Core.Services.Administration
     {
         private readonly IAuthorizationRepository _authorizationRepository;
 
-        public AuthorizationService(IAuthorizationRepository authorizationRepository) 
+        public AuthorizationService(IAuthorizationRepository authorizationRepository)
         {
             _authorizationRepository = authorizationRepository;
         }
@@ -18,7 +18,11 @@ namespace DemoApp.Core.Services.Administration
         {
             var count = await _authorizationRepository.GetAuthorizationsCount();
             var authorizations = await _authorizationRepository.GetAuthorizationsPaged(tableMetadata);
-            var authorizationDtos = authorizations.Select(AuthorizationDto.CreateDto).ToList();
+            var authorizationDtos = new List<AuthorizationDto>();
+            foreach (var authorization in authorizations)
+            {
+                authorizationDtos.Add(AuthorizationDto.CreateDto(authorization));
+            }
             var pagingMetadata = new PagingMetadata(count, tableMetadata.PagingMetadata);
 
             return new PagedListDto<AuthorizationDto>() { PagedData = authorizationDtos, PagingMetadata = pagingMetadata };
@@ -28,7 +32,7 @@ namespace DemoApp.Core.Services.Administration
         {
             var authorizations = await _authorizationRepository.GetAuthorizations();
             var authorizationDtos = new List<AuthorizationDto>();
-            foreach(var authorization in authorizations)
+            foreach (var authorization in authorizations)
             {
                 authorizationDtos.Add(AuthorizationDto.CreateDto(authorization));
             }

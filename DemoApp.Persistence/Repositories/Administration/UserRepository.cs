@@ -62,5 +62,22 @@ namespace DemoApp.Persistence.Repositories.Administration
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<User> GetUserWithApplicationsAndRoles(int id)
+        {
+            return await _context.Users
+                .Include(u => u.UserApplications)
+                .ThenInclude(ua => ua.Role)
+                .FirstOrDefaultAsync(u => u.Id == id);
+        }
+
+        public async Task<User> GetUserByUsernameAndPassword(string username, string password)
+        {
+            return await _context.Users
+                .Include(u => u.UserApplications)
+                .ThenInclude(ua => ua.Role)
+                .FirstOrDefaultAsync(u => u.Username == username && u.Password == password);
+        }
     }
 }
+

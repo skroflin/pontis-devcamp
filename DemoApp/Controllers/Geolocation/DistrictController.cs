@@ -1,5 +1,6 @@
 ﻿using DemoApp.Core.Dtos.Geolocation;
 using DemoApp.Core.Services.Geolocation.Interfaces;
+using DemoApp.Core.Utils.Security.Attributes;
 using DemoApp.Domain.Paging.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,6 +9,7 @@ namespace DemoApp.api.Controllers.Geolocation
     [Produces("application/json")]
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class DistrictController : ControllerBase
     {
         private readonly IDistrictService _districtService;

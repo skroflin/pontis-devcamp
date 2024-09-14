@@ -6,6 +6,9 @@ namespace DemoApp.Core.Dtos.Administration
     {
         public int UserId { get; set; }
         public string? UserName { get; set; }
+        public List<string> Roles { get; set; }
+        public List<string>? RoleAuthorizations { get; set; }
+
         public static UserDto CreateDto(User user)
         {
             return new UserDto 

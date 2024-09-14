@@ -1,5 +1,6 @@
 ﻿using DemoApp.Core.Dtos.Administration;
 using DemoApp.Core.Services.Administration.Interfaces;
+using DemoApp.Core.Utils.Security.Attributes;
 using DemoApp.Domain.Paging.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,6 +9,7 @@ namespace DemoApp.api.Controllers.Administration
     [Produces("application/json")]
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class RoleController : ControllerBase
     {
         private readonly IRoleService _roleService;

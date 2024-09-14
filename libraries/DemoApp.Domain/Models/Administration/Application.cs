@@ -8,5 +8,7 @@
         public DateTime DateCreated { get; set; }
         public string? UserModified { get; set; }
         public DateTime? DateModified { get; set; }
+        public ICollection<UserApplication> UserApplications { get; set; }
+
     }
 }

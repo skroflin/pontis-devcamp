@@ -12,5 +12,10 @@
         public DateTime DateCreated { get; set; }
         public string? UserModified { get; set; }
         public DateTime? DateModified { get; set; }
+        public User()
+        {
+            UserApplications = new HashSet<UserApplication>();
+        }
+        public ICollection<UserApplication> UserApplications { get; set; }
     }
 }

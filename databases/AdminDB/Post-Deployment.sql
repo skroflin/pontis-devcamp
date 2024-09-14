@@ -9,8 +9,10 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+
 :r  .\Scripts\Post-Deployment\Applications_Insert.sql
 :r  .\Scripts\Post-Deployment\Authorizations_Insert.sql
 :r  .\Scripts\Post-Deployment\Calendar_Insert.sql
 :r  .\Scripts\Post-Deployment\Roles_Insert.sql
 :r  .\Scripts\Post-Deployment\Users_Insert.sql
+:r .\Scripts\Post-Deployment\UserApplication_Insert.sql

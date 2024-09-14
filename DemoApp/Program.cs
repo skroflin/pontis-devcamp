@@ -1,6 +1,11 @@
 ﻿using DemoApp.api.Middleware;
 using DemoApp.Core;
+using DemoApp.Core.Services;
+using DemoApp.Core.Services.Administration;
+using DemoApp.Core.Services.Administration.Interfaces;
+using DemoApp.Domain.Interfaces.Repositories.Administration;
 using DemoApp.Persistence;
+using DemoApp.Persistence.Repositories.Administration;
 using DemoApp.Utilities.SecurityManagement;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -8,6 +13,12 @@ using Serilog;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.Configure<AccessOptions>(opt => builder.Configuration.Bind(nameof(AccessOptions), opt));
+
+builder.Services.AddScoped<IAuthorizationRepository, AuthorizationRepository>();
+builder.Services.AddScoped<IAuthorizationService, AuthorizationService>();
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<AuthService>();
 
 builder.Host
     .UseSerilog((hostingContext, services, loggerConfiguration) => loggerConfiguration
@@ -18,7 +29,13 @@ builder.Host
 builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddCore(builder.Configuration);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+        .AddJsonOptions(options =>
+        {
+            options.JsonSerializerOptions.ReferenceHandler = null;
+            options.JsonSerializerOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
+        });
+
 builder.Services.AddCors();
 builder.Services.AddRouting(options => options.LowercaseUrls = true);
 builder.Services.AddSwaggerGen(options =>
