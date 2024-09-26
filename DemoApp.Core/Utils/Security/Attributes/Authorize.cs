@@ -28,18 +28,6 @@ namespace DemoApp.Core.Utils.Security.Attributes
                 context.Result = new UnauthorizedResult();
                 return;
             }
-
-            var userRole = context.HttpContext.Items["UserRole"]?.ToString();
-
-            if (_roles == null || _roles.Length == 0)
-            {
-                return;
-            }
-
-            if (userRole == null || !_roles.Contains(userRole))
-            {
-                context.Result = new ForbidResult();
-            }
         }
     }
 }

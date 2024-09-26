@@ -19,7 +19,13 @@ namespace DemoApp.api.Middleware
             if (xApiKey != null && _options.Value.ApiKey == xApiKey)
             {
                 context.Items["XApiKey"] = xApiKey;
-                context.Items["UserRole"] = "admin";
+                context.Items["UserRole"] = "Admin";
+            }
+            else
+            {
+                context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                await context.Response.WriteAsync("Invalid API Key");
+                return;
             }
 
             await _next(context);

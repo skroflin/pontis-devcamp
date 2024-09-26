@@ -2,6 +2,7 @@
 using DemoApp.Domain.Models.Administration;
 using DemoApp.Domain.Paging.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 
 namespace DemoApp.Persistence.Repositories.Administration
 {
@@ -63,6 +64,12 @@ namespace DemoApp.Persistence.Repositories.Administration
                 _context.Entry(existingCountry).CurrentValues.SetValues(application);
                 await _context.SaveChangesAsync();
             }
+        }
+
+        public async Task<Application> GetApplicationByName(string name)
+        {
+            return await _context.Applications
+            .FirstOrDefaultAsync(app => app.Name == name);
         }
     }
 }

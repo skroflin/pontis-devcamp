@@ -37,6 +37,8 @@ namespace DemoApp.Persistence
             services.AddTransient<IAuthorizationRepository, AuthorizationRepository>();
             services.AddTransient<IRoleRepository, RoleRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IRoleAuthorizationRepository, RoleAuthorizationRepository>();
+            services.AddTransient<IUserApplicationRepository, UserApplicationRepository>();
         }
 
         private static void AddCommonRepositories(this IServiceCollection services)

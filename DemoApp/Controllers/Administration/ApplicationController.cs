@@ -29,6 +29,7 @@ namespace DemoApp.Api.Controllers.Administration
         [HttpGet]
         public async Task<IActionResult> GetApplications()
         {
+            var userRole = HttpContext.Items["UserRole"]?.ToString();
             var result = await _applicationService.GetApplications();
             return Ok(result);
         }

@@ -12,5 +12,6 @@ namespace DemoApp.Domain.Interfaces.Repositories.Administration
         Task InsertApplication (Application application);
         Task UpdateApplication (Application application);
         Task DeleteApplication (int id);
+        Task<Application> GetApplicationByName(string name);
     }
 }
