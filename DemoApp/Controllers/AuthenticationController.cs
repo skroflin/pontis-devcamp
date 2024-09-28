@@ -68,7 +68,7 @@ namespace DemoApp.Api.Controllers
 
                 foreach(var auth in roleAuthorizations)
                 {
-                    var authorization = await _authorizationRepository.GetAuthorization(auth.RoleId);
+                    var authorization = await _authorizationRepository.GetAuthorization(auth.AuthorizationId);
                     if (authorization != null)
                     {
                         authorizationNames.Add(authorization.Name);

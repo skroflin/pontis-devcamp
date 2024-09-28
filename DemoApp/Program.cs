@@ -33,9 +33,9 @@ builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo
     {
-        Title = "Demo App API",
-        Version = "v1",
-        Description = "Demo App API Documentation"
+        Title = "Najjača aplikacija API",
+        Version = "verzija 1 bato",
+        Description = "Opis najjačeg backend servisa u galaksiji. Nikad do sada viđeno:))))"
     });
 
     options.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme
