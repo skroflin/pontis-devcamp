@@ -1,0 +1,61 @@
+.show-form,
+.hide-form {
+  height: 100%;
+  min-height: 600px;
+  position: fixed;
+  right: 0px;
+  top: 50px;
+  width: 600px;
+}
+
+.show-form {
+  right: -600px;
+  animation: slide-from-right 0.5s forwards;
+}
+
+.hide-form {
+  right: 0px;
+  animation: slide-to-right 0.5s forwards;
+  display: none;
+}
+
+.form-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 20px;
+}
+
+.form-content {
+  padding: 20px;
+}
+
+.mat-input-element {
+  width: 250px !important;
+}
+
+.form-header {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.form-close-btn {
+  border: none;
+
+  position: absolute !important;
+  top: 10px;
+  right: 10px;
+  background-color: transparent !important;
+
+  cursor: pointer;
+  
+  >.mat-icon{
+    color: $colorGraySecondary;
+  }
+}
+
+.mat-mdc-form-field{
+  margin: 10px;
+}

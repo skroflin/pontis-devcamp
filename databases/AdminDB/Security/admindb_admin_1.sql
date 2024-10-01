@@ -1,3 +1,3 @@
-﻿CREATE LOGIN [admindb_admin]
-    WITH PASSWORD = N'lfQljhheghxyfi.n&kc#|jGPmsFT7_&#$!~<nSvv2lEsnnCf', SID = 0xDE651EDC2715CA46A7A05FB8A99B519F, DEFAULT_DATABASE = [AdminDB], DEFAULT_LANGUAGE = [us_english], CHECK_EXPIRATION = ON;
+﻿--CREATE LOGIN [admindb_admin]
+--    WITH PASSWORD = N'lfQljhheghxyfi.n&kc#|jGPmsFT7_&#$!~<nSvv2lEsnnCf', SID = 0xDE651EDC2715CA46A7A05FB8A99B519F, DEFAULT_DATABASE = [AdminDB], DEFAULT_LANGUAGE = [us_english], CHECK_EXPIRATION = ON;
 

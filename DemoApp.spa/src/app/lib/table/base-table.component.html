@@ -1,0 +1,56 @@
+<div class="table-wrapper" [class.table-wrapper-show-form]="showFormDetails" [class.table-wrapper-close-form]="!showFormDetails">
+  <div class="table-content">
+    <div class="table-header">
+      <div class="header">{{ tableHeader }}</div>
+      <div *ngIf="canAdd && showAddBtn" class="btn-add-new">
+        <button (click)="add()" class="btn btn-primary">Add new</button>
+      </div>
+    </div>
+    <table mat-table #table [dataSource]="dataSource">
+      <ng-container *ngFor="let column of columns" matSort (matSortChange)="sort($event)" matColumnDef="{{ column }}">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          <!--#TASK 1 
+            Try refactoring logic so we do not use getColumnName() but something else instead because
+            each time we go over an event in application it will refresh the method.
+            Uncomment console log in .ts file and then check inside Developer tools -> Console tab (for Developer tools press F12)
+          -->
+          <span *ngIf="column !== 'actions'">{{ getColumnName(column) }}</span>
+        </th>
+
+        <td mat-cell *matCellDef="let row; let rowIndex = dataIndex">
+          <ng-container *ngIf="column !== 'actions'">
+            {{ row[column] }}
+          </ng-container>
+          <ng-container *ngIf="column === 'actions'">
+            <button *ngIf="showDeleteBtn && canDelete" mat-icon-button (click)="delete(row)">
+              <mat-icon class="red">delete</mat-icon>
+            </button>
+            <button *ngIf="canOpen" mat-icon-button (click)="showDetails(row)">
+              <mat-icon class="orange">edit_note</mat-icon>
+            </button>
+          </ng-container>
+        </td>
+      </ng-container>
+
+      <ng-container *ngFor="let column of columnsWithFilter" matColumnDef="{{ column }}">
+        <th class="column-filter" mat-header-cell *matHeaderCellDef>
+          <input type="search" matInput (keyup)="filter($event.target.value, column)" />
+        </th>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columns"></tr>
+      <tr mat-header-row *matHeaderRowDef="columnsWithFilter"></tr>
+      <tr mat-row *matRowDef="let row; columns: columns"></tr>
+    </table>
+    <mat-paginator
+      #matPaginator
+      [length]="tableMetadata.pagingMetadata.totalCount"
+      [pageIndex]="tableMetadata.pagingMetadata.pageIndex"
+      [pageSize]="tableMetadata.pagingMetadata.pageSize"
+      [pageSizeOptions]="[5, 10, 20]"
+      [showFirstLastButtons]="true"
+      (page)="paginate($event)"
+    >
+    </mat-paginator>
+  </div>
+</div>

@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{5d162959-3629-45e8-865e-394b1663e2d4}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -102,9 +102,23 @@
     <None Include="Scripts\Post-Deployment\Roles_Insert.sql" />
     <None Include="Scripts\Post-Deployment\Users_Insert.sql" />
     <None Include="Scripts\Post-Deployment\Calendar_Insert.sql" />
+    <None Include="Scripts\Post-Deployment\UserApplication_Insert.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Snapshots\AdminDB_20240901_10-46-54.dacpac" />
+    <None Include="Snapshots\AdminDB_20240913_15-24-54.dacpac" />
+    <None Include="Snapshots\AdminDB_20240913_16-29-18.dacpac" />
+    <Build Include="dbo\Stored Procedures\crud_SelectAuthorizations.sql" />
+    <Build Include="dbo\Stored Procedures\crud_UpdateAuthorizations.sql" />
+    <Build Include="dbo\Stored Procedures\crud_InsertAuthorizations.sql" />
+    <Build Include="dbo\Stored Procedures\crud_DeleteAuthorizations.sql" />
+    <None Include="Snapshots\AdminDB_20240913_21-07-41.dacpac" />
+    <None Include="Snapshots\AdminDB_20240913_21-31-25.dacpac" />
+    <None Include="Snapshots\AdminDB_20240913_22-44-22.dacpac" />
+    <None Include="Snapshots\AdminDB_20240913_22-51-33.dacpac" />
+    <None Include="Snapshots\AdminDB_20240913_23-04-00.dacpac" />
+    <None Include="Snapshots\AdminDB_20240913_23-05-41.dacpac" />
+    <None Include="Snapshots\AdminDB_20240913_23-08-47.dacpac" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Post-Deployment.sql" />

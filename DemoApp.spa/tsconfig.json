@@ -1,0 +1,24 @@
+{
+  "angularCompilerOptions": {
+    "enableIvy": true,
+  },
+  "compileOnSave": true,
+  "compilerOptions": {
+    "outDir": "dist",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "paths": {
+      "@shared/*":["./src/app/shared/*"],
+      "@environments/*":["./src/environments/*"],
+      "@lib/*":["./src/app/lib/*"]
+    },
+    "resolveJsonModule": true,
+    "target": "ES2022",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["ES2022", "dom"]
+  },
+}

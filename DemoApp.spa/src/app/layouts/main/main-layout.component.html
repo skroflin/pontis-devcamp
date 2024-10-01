@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <div class="main-navbar" [class.main-navbar-expand]="sidebar?.showSidebar">
+    <app-navbar></app-navbar>
+  </div>
+  <div class="main-sidebar">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="main-panel" [class.main-panel-expand]="sidebar?.showSidebar">
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<app-spinner></app-spinner>

@@ -1,0 +1,16 @@
+<div class="sidebar">
+  <div class="sidebar-wrapper">
+    <div class="sidebar-logo">
+      <img src="../../../../assets/images/shared/logo.png" alt="logo" />
+      <span *ngIf="showSidebar" class="sidebar-logo-text">App Spa</span>
+    </div>
+    <div class="sidebar-items">
+      <ul class="nav">
+        <app-sidebar-items></app-sidebar-items>
+      </ul>
+    </div>
+    <div class="sidebar-item-children" [class.sidebar-item-children-expand]="showSidebar">
+      <app-sidebar-item-children *ngIf="showSidebar"></app-sidebar-item-children>
+    </div>
+  </div>
+</div>

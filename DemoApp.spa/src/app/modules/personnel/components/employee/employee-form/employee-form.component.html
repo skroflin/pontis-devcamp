@@ -1,0 +1,63 @@
+<div class="form-wrapper">
+    <div class="form-header">Employee</div>
+    <div class="form-content">
+        <form [formGroup]="formGroup" enctype="application/x-www-form-urlencoded">
+        				<mat-form-field>
+					<mat-label>Username</mat-label>
+					<input matInput type="text" formControlName="username" /> 
+				</mat-form-field>
+				<mat-form-field>
+					<mat-label>Firstname</mat-label>
+					<input matInput type="text" formControlName="firstname" /> 
+				</mat-form-field>
+				<mat-form-field>
+					<mat-label>Lastname</mat-label>
+					<input matInput type="text" formControlName="lastname" /> 
+				</mat-form-field>
+				<mat-form-field>
+					<mat-label>National id number</mat-label>
+					<input matInput type="text" formControlName="nationalIdNumber" /> 
+				</mat-form-field>
+				<mat-form-field>
+					<mat-label>National id type id</mat-label>
+					<input matInput type="text" formControlName="nationalIdTypeId" /> 
+				</mat-form-field>
+				<mat-form-field>
+					<mat-label>Gender id</mat-label>
+					<input matInput type="text" formControlName="genderId" /> 
+				</mat-form-field>
+				<mat-form-field>
+					<mat-label>Birthdate</mat-label>
+					<input matInput type="text" formControlName="birthdate" /> 
+				</mat-form-field>
+				<mat-form-field>
+					<mat-label>Address</mat-label>
+					<input matInput type="text" formControlName="address" /> 
+				</mat-form-field>
+				<mat-form-field>
+					<mat-label>Place id</mat-label>
+					<input matInput type="text" formControlName="placeId" /> 
+				</mat-form-field>
+				<mat-form-field>
+					<mat-label>Country id</mat-label>
+					<input matInput type="text" formControlName="countryId" /> 
+				</mat-form-field>
+
+        </form>
+    </div>
+
+    <div class="form-actions">
+        <button *ngIf="!isEdit && !isAdd" (click)="edit()" class="btn btn-primary">
+            Edit
+        </button>
+        <button *ngIf="isEdit || isAdd" (click)="cancel()" class="btn btn-warning mr-2">
+            Cancel
+        </button>
+        <button *ngIf="isEdit || isAdd" (click)="save()" class="btn btn-secondary">
+            Save
+        </button>
+    </div>
+    <button mat-icon-button class="form-close-btn" (click)="closeForm()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>

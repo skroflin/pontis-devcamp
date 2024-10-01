@@ -1,0 +1,131 @@
+.table-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+
+  padding: 20px;
+  background-color: $colorLightGrayPrimary;
+  border: 1px solid $colorLightGrayPrimary;
+  border-radius: 5px;
+  box-shadow: 4px 8px 18px $colorLightGraySecondary;
+  margin-top: 50px;
+
+  .table-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .header {
+      font-size: 26px;
+      font-weight: bold;
+      color: $colorGrayPrimary;
+    }
+  }
+
+  .table-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    table,
+    th,
+    td,
+    tr {
+      text-align: left !important;
+      padding: 0px 10px;
+      margin: 0px;
+    }
+
+    table,
+    th,
+    td {
+      border: none;
+    }
+
+    td {
+      background: $colorWhitePrimary;
+
+      button {
+        float: right;
+        border: none;
+        background: none;
+        color: $colorOrangeSecondary;
+        font-size: 20px;
+
+        cursor: pointer;
+
+        &:hover {
+          color: $colorGraySecondary;
+        }
+      }
+    }
+
+    th {
+      background-color: whitesmoke;
+      color: $colorGrayPrimary;
+      font-size: 14px;
+      height: 30px !important;
+      padding: 10px;
+      max-width: 100px !important;
+    }
+
+    tr {
+      border-bottom: 1px solid $colorLightGrayPrimary;
+      font-size: 12px;
+      height: 35px !important;
+      padding: 5px;
+    }
+  }
+
+  .column-filter {
+    background: $colorWhitePrimary !important;
+    position: relative;
+    margin: 10px 0;
+
+    input {
+      height: 25px;
+      padding: 5px;
+
+      outline: 0;
+      border: 1px solid $colorGrayPrimary;
+      border-radius: 3px;
+
+      transition: 0.1s all;
+    }
+
+    input::placeholder {
+      font-size: 14px;
+      font-style: italic;
+    }
+
+    input:focus {
+      transition: 0.1s ease-out;
+      border-bottom: 2px solid $colorGraySecondary;
+      padding: 5px 5px 3px 5px;
+    }
+  }
+
+  .mat-icon {
+    color: lightgray;
+    margin: 3px 5px;
+
+    &.red:hover {
+      color: $colorRedPrimary !important;
+    }
+
+    &.orange:hover {
+      color: $colorOrangeSecondary !important;
+    }
+  }
+}
+
+.table-wrapper-show-form {
+  animation: slide-to-left 0.5s forwards;
+}
+
+.table-wrapper-close-form {
+  animation: slide-from-left-to-right 0.5s forwards;
+}
