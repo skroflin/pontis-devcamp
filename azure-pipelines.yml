@@ -6,13 +6,13 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  azureSubscription: ""
-  containerRegistry: ""
+  azureSubscription: "svc-pontis-con"
+  containerRegistry: "acrwedevcamp.azurecr.io"
   env: "dev"
   # dockerComposePath: "/usr/libexec/docker/cli-plugins/docker-compose"
   dockerComposeFile: "docker-compose/docker-compose.api.yml"
-  imageRepositoryApi: ""
-  keyVaultName: ""
+  imageRepositoryApi: "demoapp-we-api"
+  keyVaultName: "akv-we-devcamp-dev"
   imageTag: $(Build.BuildNumber)
   # Agent VM image name
   vmImageName: "ubuntu-latest"
